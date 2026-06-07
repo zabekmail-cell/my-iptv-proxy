@@ -1,0 +1,7 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="Ch1" tvg-logo="https://i.imgur.com/logo1.png", UK: Sky Sports + FD
+https://my-iptv-proxy-2boo.onrender.com/1/myplaylist_06062026.m3u8
+#EXTINF:-1 tvg-id="Ch2" tvg-logo="https://i.imgur.com/logo2.png", UK: Sky Sports + HD
+https://my-iptv-proxy-2boo.onrender.com/2/myplaylist_06062026.m3u8
+#EXTINF:-1 tvg-id="Ch3" tvg-logo="https://i.imgur.com/logo3.png", Sky Sports Golf FHD
+https://my-iptv-proxy-2boo.onrender.com/3/myplaylist_06062026.m3u8
