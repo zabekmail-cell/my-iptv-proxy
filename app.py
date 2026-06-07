@@ -7,24 +7,22 @@ app = Flask(__name__)
 def home():
     return "IPTV Proxy Server is Live!"
 
-# --- CHANNEL 1: Your original channel ---
-@app.route('/playlist.m3u8')
+# --- CHANNEL 1 ---
+@app.route('/1/myplaylist_06062026.m3u8')
 def proxy_stream1():
     target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254477.m3u8?_lsr=mq3tkarw_m"
     return redirect(target_url, code=302)
 
-# --- CHANNEL 2: Add a second stream here ---
-@app.route('/sports.m3u8')
+# --- CHANNEL 2 ---
+@app.route('/2/myplaylist_06062026.m3u8')
 def proxy_stream2():
-    # Replace the link below with your second stream URL
-    target_url = "http://another-stream-link-here.com/live/stream.m3u8"
+    target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254476.m3u8?_lsr=mq415z6j_3p1&_vnc=mq415z6k_3p2"
     return redirect(target_url, code=302)
 
-# --- CHANNEL 3: Add a third stream here ---
-@app.route('/news.m3u8')
+# --- CHANNEL 3 ---
+@app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
-    # Replace the link below with your third stream URL
-    target_url = "http://a-third-stream-link-here.com/live/stream.m3u8"
+    target_url = "http://benchoda.xyz:8880/live/neil.woodward12/bjwseZ8JkH/4098190.m3u8?_lsr=mq425ppx_2"
     return redirect(target_url, code=302)
 
 
