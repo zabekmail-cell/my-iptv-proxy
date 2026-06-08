@@ -10,19 +10,19 @@ def home():
 # --- CHANNEL 1 ---
 @app.route('/1/myplaylist_06062026.m3u8')
 def proxy_stream1():
-    target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254477.m3u8?_lsr=mq3tkarw_m"
+    target_url = "http://websafety101.net:5050/live/JermaineTy264/pk5KG5HCub/509081.m3u8"
     return redirect(target_url, code=302)
 
 # --- CHANNEL 2 ---
 @app.route('/2/myplaylist_06062026.m3u8')
 def proxy_stream2():
-    target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254476.m3u8?_lsr=mq415z6j_3p1&_vnc=mq415z6k_3p2"
+    target_url = "http://line.fire-4k.cc/live/290113/24475A/1457496.m3u8?_lsr=mq47jrig_1"
     return redirect(target_url, code=302)
 
 # --- CHANNEL 3 ---
 @app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
-    target_url = "http://benchoda.xyz:8880/live/neil.woodward12/bjwseZ8JkH/4098190.m3u8?_lsr=mq425ppx_2"
+    target_url = "http://103.254.122.133/live/290113/24475A/1457488.m3u8?_t=1780862566426&_vnc=mq47lan4_l&token=SEReU0dfFg8WAAJVAgRVUgMLVAxXVlQPAVYBVVJQUQALVw8ADA8FBFEWGxRGRUZWVl9tXVAWWAgHVwAHCQtJFkYVU0BrXlAXDhYGAAUCAwoDEB4WQF0PXBFYBx8TQwxQEVwUAAIEDQMWGBVTTUVRQVlTXmtQURRQUAcVCV9GCVgfRFlca1NRWFVaUxQPEwQRGxBbR0QWWFdGDlsfE1EMQEEHQlcWDRYDBAEFFBkTV1xCXEZGTRZYG2MuFR8TVh1AVghFW1tZFg8WWQRDDRMYEV5BbUZRRxZLVgNaVkMRXxYDRBoQWVZMaldbWVhQUkBaWFxBFg4WUxsfQFpcX1oRW0E5RltQFQ4XBwMBAxcdFkZEV0BrXURAAxFVAB0HBksFA1cYAwMHFkg="
     return redirect(target_url, code=302)
 
 
