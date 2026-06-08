@@ -19,11 +19,44 @@ def proxy_stream2():
     target_url = "http://line.fire-4k.cc/live/290113/24475A/1457496.m3u8?_lsr=mq47jrig_1"
     return redirect(target_url, code=302)
 
-# --- CHANNEL 3 ---
+# --- CHANNEL 3 (CBS - DULO TV PROXY) ---
 @app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
-    target_url = "https://images.dulo.tv/memfs/bbf679fc-bf77-4ac4-a988-b36195bd1e31_output_0.m3u8?session=LaFkqLpEuv9ff5J9BhntKn"
-    return redirect(target_url, code=302)
+    # The corrected full URL with https:// added to the front
+    target_url = "https://mages.dulo.tv/memfs/bbf679fc-bf77-4ac4-a988-b36195bd1e31_output_0.m3u8?session=LaFkqLpEuv9ff5J9BhntKn"
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Referer': 'https://mages.dulo.tv/',
+        'Origin': 'https://mages.dulo.tv'
+    }
+    
+    try:
+        # 1. Render downloads the true CBS file using our browser trick
+        r = requests.get(target_url, headers=headers, timeout=10)
+        text_data = r.text
+        
+        # 2. Fix the relative video links so your app knows to pull them from dulo.tv
+        base_url = "https://mages.dulo.tv/memfs/"
+        rewritten_data = []
+        
+        for line in text_data.splitlines():
+            # If the line points to a video chunk or sub-playlist and doesn't have http, attach the base URL
+            if ('.ts' in line or '.m3u8' in line) and not line.startswith('http'):
+                # Handle leading slashes if present
+                if line.startswith('/'):
+                    rewritten_data.append("https://mages.dulo.tv" + line)
+                else:
+                    rewritten_data.append(base_url + line)
+            else:
+                rewritten_data.append(line)
+                
+        final_m3u8 = "\n".join(rewritten_data)
+        
+        return Response(final_m3u8, content_type='application/x-mpegURL')
+        
+    except Exception as e:
+        return f"Proxy Error: {str(e)}", 500
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 10000))
