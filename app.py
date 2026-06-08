@@ -19,38 +19,12 @@ def proxy_stream2():
     target_url = "http://line.fire-4k.cc/live/290113/24475A/1457496.m3u8?_lsr=mq47jrig_1"
     return redirect(target_url, code=302)
 
-# --- CHANNEL 3 (CBS DEEP PROXY) ---
+# --- CHANNEL 3 ---
 @app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
-    target_url = "http://103.254.122.129/live/290113/24475A/1457769.m3u8?_t=1780952700819&_vnc=mq5p9phk_26&token=SEReU0dfFg8WUQdQBgVWAlNTAVVSBAYKUQdWUVUDBwBRVgRXVwFWA1YWGxRGRUZWVl9tXVAWWAgHVwAEBwpJFkYVU0BrXlAXDhYGAAUCAwoDEB4WQF0PXBFYBx8TQwxQEVwUAQYFDAQWGBVTTUVRQVlTXmtQURRQUAcVCV9GCVgfRFlca1NRWFVaUxQPEwQRGxBbR0QWWFdGDlsfE1EMQEEHQlcWDRYCDAMVGhdSW0ZZRkBNFg5AaX9AGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYEBQMBBhcdFkZEV0BrXURAAxFVAB0HBksFA1cYAwMHFkg%3D"
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
-    
-    try:
-        # 1. Render downloads the true CBS file using our browser trick
-        r = requests.get(target_url, headers=headers, timeout=10)
-        text_data = r.text
-        
-        # 2. Fix relative paths so your player knows to grab the video chunks from the provider
-        base_url = "http://103.254.122.129/live/290113/24475A/"
-        rewritten_data = []
-        
-        for line in text_data.splitlines():
-            # If the line is a video segment link and doesn't start with http, fix it
-            if line.endswith('.ts') and not line.startswith('http'):
-                rewritten_data.append(base_url + line)
-            else:
-                rewritten_data.append(line)
-                
-        final_m3u8 = "\n".join(rewritten_data)
-        
-        return Response(final_m3u8, content_type='application/x-mpegURL')
-        
-    except Exception as e:
-        return f"Proxy Error: {str(e)}", 500
-    
+    target_url = "https://images.dulo.tv/memfs/bbf679fc-bf77-4ac4-a988-b36195bd1e31_output_0.m3u8?session=LaFkqLpEuv9ff5J9BhntKn"
+    return redirect(target_url, code=302)
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
