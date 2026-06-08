@@ -23,7 +23,7 @@ def proxy_stream2():
 @app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
     # The corrected full URL with https:// added to the front
-    target_url = "https://mages.dulo.tv/memfs/bbf679fc-bf77-4ac4-a988-b36195bd1e31_output_0.m3u8?session=LaFkqLpEuv9ff5J9BhntKn"
+    target_url = "https://pontos.phantemlis.top/premium52/tracks-v1a1/mono.m3u8?md5=C2G7HMbCGuei3aR8QOyjXg&expires=1780959296"
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
