@@ -23,7 +23,7 @@ def proxy_stream2():
 @app.route('/3/myplaylist_06062026.m3u8')
 def proxy_stream3():
     # The corrected full URL with https:// added to the front
-    target_url = "https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5a6b92f6e22a617379789618/master.m3u8"
+    target_url = "http://103.254.122.107/live/290113/24475A/1651867.m3u8?_t=1780862754014&_vnc=mq47pvv4_p&token=SEReU0dfFg8WBQJXAQABBlEHVFBWBAALA1UOVVNWAQRQVQRXBg8HUFIWGxRGRUZWVl9tXVAWWAgFVwYLBwRJFkYVU0BrXlAXDhYGAAUCAwoDEB4WQF0PXBFYBx8TQwxQEVwUAAUOAQEWGBVTTUVRQVlTXmtQURRQUAcVCV9GCVgfRFlca1NRWFVaUxQPEwQRGxBbR0QWWFdGDlsfE1EMQEEHQlcWDRYGDAUAFBkTV1xCXEZGTRZYG2MuFR8TVh1AVghFW1tZFg8WWQRDDRMYEV5BbUZRRxZLVgNaVkMRXxYDRBoQWVZMaldbWVhQUkBaWFxBFg4WUxsfQFpcX1oRW0E5RltQFQ4XBQEDAwcTGBFCQVdGa10SGwlAAAQfBVAaAlYHHAUABBdJ"
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
