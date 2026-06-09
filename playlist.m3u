@@ -1,11 +1,8 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-id="MainTV" tvg-logo="https://i.imgur.com/logo1.png", My Main Channel
+#EXTINF:-1 tvg-id="Test1", Test Channel 1
 https://my-iptv-proxy-2boo.onrender.com/1/playlist.m3u8
 
-#EXTINF:-1 tvg-id="SportsTV" tvg-logo="https://i.imgur.com/logo2.png", My Sports Channel
+#EXTINF:-1 tvg-id="Test2", Test Channel 2
 https://my-iptv-proxy-2boo.onrender.com/2/playlist.m3u8
-
-#EXTINF:-1 tvg-id="NewsTV" tvg-logo="https://i.imgur.com/logo3.png", My News Channel
-https://my-iptv-proxy-2boo.onrender.com/3/playlist.m3u8
 
