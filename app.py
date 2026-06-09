@@ -11,7 +11,7 @@ def home():
 @app.route('/playlist.m3u8')
 def proxy_stream():
     # Your target token-protected live link
-    target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254477.m3u8?_lsr=mq3tkarw_m"
+    target_url = "http://line.fire-4k.cc/live/290113/24475A/1457496.m3u8?_lsr=mq47jrig_1"
     
     req = urllib.request.Request(
         target_url, 
