@@ -1,5 +1,5 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="CBS" tvg-name="CBS" group-title="Entertainment",CBS
-https://your-app-name.onrender.com/1/myplaylist_06062026.m3u8
+https://my-iptv-proxy-2boo.onrender.com/1/myplaylist_06062026.m3u8
 #EXTINF:-1 tvg-id="ABC" tvg-name="ABC" group-title="Entertainment",ABC
-https://your-app-name.onrender.com/2/myplaylist_06062026.m3u8
+https://my-iptv-proxy-2boo.onrender.com/2/myplaylist_06062026.m3u8
