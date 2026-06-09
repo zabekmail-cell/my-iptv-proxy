@@ -15,7 +15,7 @@ def proxy_stream1():
     return redirect(target_url, code=302)
 
 # --- CHANNEL 2 ---
-@app.route('/2/myplaylist_06062026.m3u8')  # Fixed distinct route path
+@app.route('/2/myplaylist_06062026.m3u8')
 def proxy_stream2():
     target_url = "http://line.fire-4k.cc/live/290113/24475A/1457496.m3u8?_lsr=mq47jrig_1"
     return redirect(target_url, code=302)
