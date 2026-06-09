@@ -1,4 +1,8 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="MyChannel" tvg-logo="https://i.imgur.com/your-logo.png", My Custom Live Channel
-https://my-iptv-proxy-2boo.onrender.com/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://logo-url-here.png", Sports Channel
+https://my-iptv-proxy-2boo.onrender.com/sports.m3u8
+
+#EXTINF:-1 tvg-logo="https://logo-url-2.png", Movie Channel
+https://my-iptv-proxy-2boo.onrender.com/movies.m3u8
 
