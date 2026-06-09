@@ -1,6 +1,6 @@
 import os
-import requests  
-from flask import Flask, redirect, Response  
+import urllib.request
+from flask import Flask, Response
 
 app = Flask(__name__)
 
@@ -8,12 +8,27 @@ app = Flask(__name__)
 def home():
     return "IPTV Proxy Server is Live!"
 
-# --- CHANNEL 1 ---
-@app.route('/1/myplaylist_06062026.m3u8')
-def proxy_stream1():
-    target_url = "https://103.254.122.129/live/290113/24475A/1457769.m3u8?_t=1780952700819&_vnc=mq5p9phk_26&token=SEReU0dfFg8WUQdQBgVWAlNTAVVSBAYKUQdWUVUDBwBRVgRXVwFWA1YWGxRGRUZWVl9tXVAWWAgHVwAEBwpJFkYVU0BrXlAXDhYGAAUCAwoDEB4WQF0PXBFYBx8TQwxQEVwUAQYFDAQWGBVTTUVRQVlTXmtQURRQUAcVCV9GCVgfRFlca1NRWFVaUxQPEwQRGxBbR0QWWFdGDlsfE1EMQEEHQlcWDRYCDAMVGhdSW0ZZRkBNFg5AaX9AGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYEBQMBBhcdFkZEV0BrXURAAxFVAB0HBksFA1cYAwMHFkg%3D"
-    return redirect(target_url, code=302)
+@app.route('/playlist.m3u8')
+def proxy_stream():
+    # Your target token-protected live link
+    target_url = "http://tv-278956.ifiesta.net:8080/live/TV-13086383561888/231006460908/254477.m3u8?_lsr=mq3tkarw_m"
+    
+    req = urllib.request.Request(
+        target_url, 
+        headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+            'Referer': 'http://ifiesta.net/',
+            'Origin': 'http://ifiesta.net'
+        }
+    )
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            return Response(response.read(), mimetype='application/x-mpegURL', headers={'Access-Control-Allow-Origin': '*'})
+    except Exception as e:
+        return f"Proxy Error: {str(e)}", 500
 
 if __name__ == "__main__":
+    # Render passes the port dynamically via an environment variable
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
